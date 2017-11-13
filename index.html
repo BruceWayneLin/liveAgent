@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <!-- live agent -->
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <script src='js/jquery.min.js'></script>
+    <script type='text/javascript' src='https://c.la1-c1-dfw.salesforceliveagent.com/content/g/js/41.0/deployment.js'>
+    </script>
+    <script type='text/javascript'>
+        liveagent.init('https://d.la1-c1-dfw.salesforceliveagent.com/chat', '57261000000PL9u', '00D61000000adFP');
+    </script>
+    <script type="text/javascript">
+        if (!window._laq) { window._laq = []; }
+        window._laq.push(function(){liveagent.showWhenOnline('57361000000PLrF', document.getElementById('liveagent_button_online_57361000000PLrF'));
+            liveagent.showWhenOffline('57361000000PLrF', document.getElementById('liveagent_button_offline_57361000000PLrF'));
+        });
+        liveagent.setChatWindowHeight(750);
+    </script>
+</head>
+<body>
+<div style="height: 3800px;"></div>
+
+<div>
+    <a id="liveagent_button_online_57361000000PLrF" href="javascript://Chat" style="display: none;" onclick="liveagent.startChat('57361000000PLrF')" class="AgentOnline" >
+    </a>
+</div>
+
+<div class="AgentOffline" id="liveagent_button_offline_57361000000PLrF" style="display: none;">
+</div>
+
+</body>
+</html>
+<script type='text/javascript'>
+    $(document).ready(function(){
+        //at begining we load the first pic
+        $('.AgentOffline').css({
+            "background": "url(img/offlineHover.png)",
+            "right": "5px"
+        });
+        $('.AgentOnline').css({
+            "background": "url(img/onlineHover.png)",
+            "right": "5px"
+        });
+
+        $(document).on('scroll', function(){
+            if($(document).scrollTop() > 35){
+                $('.AgentOffline').css({
+                    "background": "url(img/offline.png)",
+                    "width": "66px",
+                    "right": "4px",
+                    "background-position-x": "-77px"
+                });
+                $('.AgentOnline').css({
+                    "background": "url(img/online.png)",
+                    "width": "66px",
+                    "right" : "4px",
+                    "background-position-x": "-77px"
+                });
+            }else{
+                $('.AgentOffline').css({
+                    "background": "url(img/offlineHover.png)",
+                    "width": "142px",
+                    "right": "5px"
+                });
+                $('.AgentOnline').css({
+                    "background": "url(img/onlineHover.png)",
+                    "width": "142px",
+                    "right": "5px"
+                });
+            }
+        });
+    });
+</script>
+<style>
+    .AgentOnline {
+        bottom: 110px!important;
+    }
+
+    .AgentOnline:hover {
+        bottom: 110px!important;
+    }
+
+    .AgentOffline {
+        bottom: 110px!important;
+    }
+
+    .AgentOffline:hover {
+        bottom: 110px!important;
+    }
+    .AgentOnline {
+        background: url(img/online.png) 79px 0px;
+        background-size: contain;
+        display: block;
+        position: fixed;
+        width:142px;
+        height:68px;
+        bottom: 170px!important;
+        right: -79px;
+        z-index: 99;
+        background-repeat: no-repeat!important;
+    }
+
+    .AgentOnline:hover {
+        background: url(img/onlineHover.png) 0px 0px!important;
+        background-size: contain;
+        display: block;
+        position: fixed;
+        width:142px!important;
+        height:68px;
+        bottom: 170px!important;
+        display: block;
+        right: 5px!important;
+        z-index: 99;
+        background-repeat: no-repeat!important;
+    }
+
+    .AgentOffline {
+        background: url(img/offline.png) 79px 0px;
+        background-size: contain;
+        display: block;
+        position: fixed;
+        width:142px;
+        height:68px;
+        bottom: 170px!important;
+        right: -79px;
+        display: block;
+        background-position-x: right;
+        background-repeat: no-repeat!important;
+        z-index: 99;
+    }
+
+    .AgentOffline:hover {
+        background: url(img/offlineHover.png) 0px 0px!important;
+        background-size: contain;
+        display: block;
+        position: fixed;
+        width:142px!important;
+        height:68px;
+        bottom: 170px!important;
+        right: 5px!important;
+        display: block;
+        z-index: 99;
+        background-repeat: no-repeat!important;
+    }
+</style>
