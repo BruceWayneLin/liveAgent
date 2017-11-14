@@ -21,15 +21,14 @@
 </head>
 <body>
 <div style="height: 3800px;"></div>
-
-<div>
+<div id="liveAgentArea">
     <a id="liveagent_button_online_57361000000PLrF" href="javascript://Chat" style="display: none;" onclick="liveagent.startChat('57361000000PLrF')" class="AgentOnline" >
     </a>
 </div>
-
-<div class="AgentOffline" id="liveagent_button_offline_57361000000PLrF" style="display: none;">
+<div id="liveAgentArea2">
+    <div class="AgentOffline" id="liveagent_button_offline_57361000000PLrF" style="display: none;">
+    </div>
 </div>
-
 </body>
 </html>
 <script type='text/javascript'>
@@ -71,6 +70,22 @@
                 });
             }
         });
+
+        var is_touch_device = function() {
+            try {
+                document.createEvent("TouchEvent");
+                return true;
+            } catch (e) {
+                return false;
+            }
+        }
+        if(is_touch_device()){
+            $('#liveAgentArea').hide();
+            $('#liveAgentArea2').hide();
+        }else{
+            $('#liveAgentArea').show();
+            $('#liveAgentArea2').show();
+        }
     });
 </script>
 <style>
